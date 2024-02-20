@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 07:44:09 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/20 09:10:26 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/20 16:05:41 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,47 @@
 #include <string.h>
 #include <stddef.h>
 
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*pdest;
-	unsigned char	*psrc;
-	unsigned char	*tmp;
+	size_t	i;
 
-	tmp = NULL;
-	pdest = (unsigned char *) dest;
-	psrc = (unsigned char *) src;
-	while (n > 0)
+	i = 0;
+	if (dest < src)
 	{
-		*tmp = *psrc;
-		tmp++;
-		psrc++;
+		while (i < n)
+		{
+			((unsigned char *) dest)[i] = ((unsigned char *) src)[i];
+			i++;
+		}
 	}
-	tmp = &tmp[0];
-	while (n > 0)
+	else
 	{
-		*pdest = *tmp;
-		tmp++;
-		pdest++;
+		while (n > 0)
+		{
+			((unsigned char *) dest)[n - 1] = ((unsigned char *) src)[n - 1];
+			n--;
+		}
 	}
 	return (dest);
 }
 
-int	main()
+void print_elements(const char *array, int size)
 {
-	char	array[] = "coucou a vous tous";
-	char	array_cpy[] = "Bole monde !";
-	size_t	n = 7;
-	ft_memmove(array, array_cpy, n);
-	printf("%s\n", array);
+  int i;
+  printf ("Elements : ");
+  for (i = 0; i < size; i++) {
+    printf ("%c, ", array[i]);
+  }
+  printf ("\n");
+}
+
+int main(void)
+{
+  char array[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+  const char c_array[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+  print_elements(c_array, sizeof(c_array));
+  printf("After memcpy()\n");
+  ft_memmove((void *)&array[1], (const void *)&c_array[0], 4);
+  print_elements(array, sizeof(array));
 }
