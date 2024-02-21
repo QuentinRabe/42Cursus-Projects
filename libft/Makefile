@@ -14,7 +14,7 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)gn
 
 clean:
 	$(RM) $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:53:44 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 08:34:50 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:22:32 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (size == 0)
+		return (st_strlen(src));
 	i = 0;
 	while (src[i] != '\0' && i < size - 1)
 	{
