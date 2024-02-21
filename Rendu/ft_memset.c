@@ -6,13 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 11:15:01 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/19 15:06:46 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:39:06 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -29,27 +27,25 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (ptr);
 }
 
-int	main(void)
-{
-	char	array[16] = "Bonjour";
-	int	i = 0;
+// int	main(void)
+// {
+// 	char	array[16] = "Bonjour";
+// 	int	i = 0;
 
-	ft_memset(array, (int) 'A', 2);
-	printf("======FT_MEMSET======\n");
-	while (i < 10)
-	{
-		printf("%p = %c\n", &array[i], array[i]);
-		i++;
-	}
+// 	ft_memset(array, (int) 'A', 2);
+// 	printf("======FT_MEMSET======\n");
+// 	while (i < 10)
+// 	{
+// 		printf("%p = %c\n", &array[i], array[i]);
+// 		i++;
+// 	}
 
-	i = 0;
-	memset(array, (int) 'A', 2);
-	printf("======MEMSET======\n");
-	while (i < 10)
-	{
-		printf("%p = %c\n", &array[i], array[i]);
-		i++;
-	}
-}
-
-
+// 	i = 0;
+// 	memset(array, (int) 'A', 2);
+// 	printf("======MEMSET======\n");
+// 	while (i < 10)
+// 	{
+// 		printf("%p = %c\n", &array[i], array[i]);
+// 		i++;
+// 	}
+// }

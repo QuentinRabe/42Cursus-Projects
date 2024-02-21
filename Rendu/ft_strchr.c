@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 09:47:34 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 08:36:38 by arabefam         ###   ########.fr       */
+/*   Created: 2024/02/21 07:23:52 by arabefam          #+#    #+#             */
+/*   Updated: 2024/02/21 08:40:21 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c < 65 || (c > 90 && c < 97) || c > 122)
-		return (0);
-	return (1);
+	char	a;
+	char	*occ;
+
+	a = (char) c;
+	occ = NULL;
+	while (*s != '\0')
+	{
+		if (*s == a)
+		{
+			occ = (char *) s;
+			return (occ);
+		}
+		s++;
+	}
+	return (occ);
 }
+// int	main()
+// {
+// 	const char	str[] = "Bonjour le monde ! Je suis Quentin";
+// 	int	c = '!';
+// 	printf("%s\n", strchr(str, c));
+// 	printf("%s\n", ft_strchr(str, c));
+// }

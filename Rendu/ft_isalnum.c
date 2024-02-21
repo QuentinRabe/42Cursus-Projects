@@ -6,11 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:23:52 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/19 10:28:20 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:36:48 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 static int	st_ft_isdigit(int c)
 {
@@ -33,13 +33,13 @@ int	ft_isalnum(int c)
 	return (0);
 }
 
-int	main (void)
-{
-	int	i = 0;
+// int	main (void)
+// {
+// 	int	i = 0;
 
-	while (i < 256)
-	{
-		printf("%c = %d\n", i, ft_isalnum(i));
-		i++;
-	}
-}
+// 	while (i < 256)
+// 	{
+// 		printf("%c = %d\n", i, ft_isalnum(i));
+// 		i++;
+// 	}
+// }

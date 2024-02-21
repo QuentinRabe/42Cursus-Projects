@@ -6,13 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:53:44 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/20 14:10:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:34:50 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stddef.h>
-// #include <bsd/string.h>
+#include "libft.h"
 
 static size_t	st_strlen(const char *str)
 {
@@ -38,11 +36,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (st_strlen(src));
 }
 
-int	main()
-{
-	char	str[] = "Andyh";
-	char	dest[] = "Bonjour";
-	size_t	size = ft_strlcpy(dest, str, 48);
-	printf("%zu\n", size);
-	printf("%s\n", dest);
-}
+// int	main()
+// {
+// 	char	str[] = "Andyh";
+// 	char	dest[] = "Bonjour";
+// 	size_t	size = ft_strlcpy(dest, str, 48);
+// 	printf("%zu\n", size);
+// 	printf("%s\n", dest);
+// }

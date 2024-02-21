@@ -6,13 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:14:50 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/20 14:49:59 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/21 08:39:36 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
-#include <stdio.h>
-#include <stddef.h>
+#include "libft.h"
 
 static size_t	st_strlen(const char *str)
 {
@@ -41,21 +39,17 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[dst_len + i] = '\0';
-	printf("dst_len = %zu\n", dst_len);
-	printf("src_len = %zu\n", src_len);
 	if (dst_len >= size)
 		return (size + src_len);
 	else
 		return (dst_len + src_len);
 }
+// int main()
+// {
+// 	char	dest[] = "Hello";
+// 	char	src[] = " world";
 
-
-int main()
-{
-	char	dest[] = "Hello";
-	char	src[] = " world";
-
-	size_t	size = strlcat(dest, src, 2);
-	printf("%zu\n", size);
-	printf("%s\n", dest);
-}
+// 	size_t	size = strlcat(dest, src, 2);
+// 	printf("%zu\n", size);
+// 	printf("%s\n", dest);
+// }
