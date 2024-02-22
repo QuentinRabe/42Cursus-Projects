@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 08:28:38 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/22 14:23:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/22 14:51:17 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
