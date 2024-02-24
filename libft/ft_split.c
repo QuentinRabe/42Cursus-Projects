@@ -6,17 +6,17 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 07:18:47 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/23 10:05:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/24 10:52:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
 
-static size_t	token_count(char const *s, char c)
+static int	token_count(char const *s, char c)
 {
-	size_t	count;
-	int		is_inside;
+	int		count;
+	short	is_inside;
 
 	count = 0;
 	while (*s != '\0')
@@ -35,37 +35,61 @@ static size_t	token_count(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static int	count_len(char const *s, char c)
 {
-	char	**list;
-	size_t	len;
-	int		i;
+	int	len;
 
-	list = (char **) malloc((token_count(s, c) + 1) * sizeof(char *));
-	if (!s || !list)
-		return (0);
-	i = 0;
+	if (ft_strchr(s, c) != NULL)
+		len = ft_strchr(s, c) - s;
+	else
+		len = ft_strlen(s);
+	return (len);
+}
+
+static char	**split_helper(t_split split, char const *s, char c)
+{
+	int	len;
+
 	while (*s != '\0')
 	{
 		while (*s != '\0' && *s == c)
 			s++;
 		if (*s != '\0')
 		{
-			if (!ft_strchr(s, c))
-				len = ft_strlen(s);
-			else
-				len = ft_strchr(s, c) - s;
-			list[i++] = ft_substr(s, 0, len);
+			len = count_len(s, c);
+			split.list[split.i] = ft_substr(s, 0, len);
+			if (!split.list[split.i])
+			{
+				while (split.i >= 0)
+					free(split.list[split.i--]);
+				free(split.list);
+				return (NULL);
+			}
 			s = s + len;
+			split.i++;
 		}
 	}
-	list[i] = NULL;
-	return (list);
+	split.list[split.i] = NULL;
+	return (split.list);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	t_split	split;
+
+	split.list = (char **) malloc((token_count(s, c) + 1) * sizeof(char *));
+	if (!split.list)
+	{
+		free(split.list);
+		return (NULL);
+	}
+	split.i = 0;
+	return (split_helper(split, s, c));
 }
 
 // int	main()
 // {
-// 	char	str[] = "Hello world andyh";
+// 	char	str[] = "hello";
 // 	char	**splited = ft_split(str, ' ');
 // 	int		i = 0;
 // 	while (splited[i] != NULL)

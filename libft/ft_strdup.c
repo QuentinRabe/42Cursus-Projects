@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:22:45 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/22 09:14:26 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/24 07:35:26 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,16 @@
 // #include <stdlib.h>
 // #include <string.h>
 
-static size_t	st_strlen(const char *s)
-{
-	size_t	count;
-	int		i;
-
-	count = 0;
-	i = -1;
-	while (s[++i] != '\0')
-		count++;
-	return (count);
-}
-
 char	*ft_strdup(const char *s)
 {
 	char		*dup;
 	size_t		i;
 
-	dup = (char *)malloc((st_strlen(s) + 1) * sizeof(char));
+	dup = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!dup)
 		return (NULL);
 	i = 0;
-	while (i < st_strlen(s))
+	while (i < ft_strlen(s))
 	{
 		dup[i] = s[i];
 		i++;

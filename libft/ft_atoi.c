@@ -6,20 +6,13 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:16:41 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 16:09:48 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/24 07:30:29 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
 // #include <stdlib.h>
-
-static int	st_isdigit(int c)
-{
-	if (c < 48 || c > 57)
-		return (0);
-	return (1);
-}
 
 int	ft_atoi(const char *nptr)
 {
@@ -38,7 +31,7 @@ int	ft_atoi(const char *nptr)
 			sign *= -1;
 		ptr++;
 	}
-	while (*ptr != '\0' && st_isdigit(*ptr))
+	while (*ptr != '\0' && ft_isdigit(*ptr))
 	{
 		nbr *= 10;
 		nbr += (*ptr - '0');

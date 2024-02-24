@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:07:13 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/23 11:54:06 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/24 07:43:30 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ char	*ft_itoa(int n)
 
 	nbr = (long) n;
 	str = (char *) malloc((count_digit(n) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	if (nbr == 0)
 	{
 		str[0] = '0';

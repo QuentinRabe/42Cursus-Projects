@@ -6,24 +6,12 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:26:49 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/22 15:41:35 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/24 07:35:53 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // #include <stdio.h>
-
-static size_t	st_strlen(const char *s)
-{
-	size_t	count;
-	int		i;
-
-	count = 0;
-	i = -1;
-	while (s[++i] != '\0')
-		count++;
-	return (count);
-}
 
 static void	st_strcat(char const *s1, char const *s2, char	*joined)
 {
@@ -53,7 +41,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len;
 	char	*joined;
 
-	len = st_strlen(s1) + st_strlen(s2) + 1;
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	joined = (char *) malloc((len) * sizeof(char));
 	if (!joined)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 08:28:38 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/23 13:55:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/02/24 10:58:45 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_split
+{
+	char	**list;
+	int		i;
+}			t_split;
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 // ===============INT===============
 int		ft_isalnum(int c);
@@ -55,4 +67,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+// ===============BONUS===============
+t_list	*ft_lstnew(void *content);
 #endif
